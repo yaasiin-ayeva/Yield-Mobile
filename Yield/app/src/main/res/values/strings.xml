@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">Yield</string>
+
+    <string name="home_text">Home</string>
+    <string name="sms_text" translatable="false">SMS</string>
+    <string name="whatsapp_text" translatable="false">WhatsApp</string>
+    <string name="ERROR_PHONE_NUMBER_FORMAT">Incorrect phone number format</string>
+    <string name="whatsapp_suffix" translatable="false">Sent from Yield-App</string>
+</resources>
