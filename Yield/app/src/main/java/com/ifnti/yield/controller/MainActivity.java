@@ -15,11 +15,15 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ifnti.yield.R;
+import com.ifnti.yield.controller.sms.SmsFragment;
+import com.ifnti.yield.controller.whatsapp.WhatsappFragment;
+
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navigationView;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
+    public static String sms_sending_log_text = " app@yield:~$ ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +60,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // This line make the init of sendings
         Static.init();
         checkPermission();
 
+
     }
+
+
 
     private void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
