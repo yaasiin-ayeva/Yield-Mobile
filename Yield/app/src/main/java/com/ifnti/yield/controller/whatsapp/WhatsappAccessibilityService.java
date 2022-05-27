@@ -1,4 +1,4 @@
-package com.ifnti.yield.controller;
+package com.ifnti.yield.controller.whatsapp;
 
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityEvent;

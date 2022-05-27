@@ -2,4 +2,5 @@
 <resources>
     <string name="home_text">Accueil</string>
     <string name="ERROR_PHONE_NUMBER_FORMAT">"Format incorrect de numero de téléphone "</string>
+    <string name="send_btn_label">Envoyer tous les SMS en attente</string>
 </resources>

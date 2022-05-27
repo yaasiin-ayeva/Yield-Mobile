@@ -1,4 +1,4 @@
-package com.ifnti.yield.controller;
+package com.ifnti.yield.controller.whatsapp;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import android.provider.Settings;
-import android.telephony.SmsManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.ifnti.yield.R;
-import com.ifnti.yield.model.Sending;
+import com.ifnti.yield.controller.Static;
 
 import java.util.ArrayList;
 
@@ -84,7 +83,7 @@ public class WhatsappFragment extends Fragment {
         btn_send_whatsapp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 try {
-                    sendAll(Static.sendings, Static.senderAdress);
+                    //send(Static.sendings, Static.senderAdress);
                 } catch (NumberFormatException e) {
                     Toast.makeText(WhatsappFragment.this.getContext(), e.getMessage(),Toast.LENGTH_LONG).show();
                 }
@@ -93,15 +92,14 @@ public class WhatsappFragment extends Fragment {
         return root;
     }
 
-    private void sendAll(ArrayList<Sending> sendings, String senderAddress) throws NumberFormatException {
+    /*private void send(ArrayList<Sending> sendings, String senderAddress) throws NumberFormatException {
         String sendLog = "";
         Intent sendIntent = null;
         String contactName, contactPhoneNo, textMessage;
         for (Sending sending : sendings) {
             sendIntent = new Intent(Intent.ACTION_SEND);
-            contactName = sending.getPerson().getFirstName() + " " + sending.getPerson().getSurName();
-            contactPhoneNo = sending.getPerson().getPhoneNumber();
-            textMessage = sending.getMessage().getTextMessage();
+            contactPhoneNo = sending.getPhoneNo();
+            textMessage = sending.getTextMessage();
 
             sendIntent.setType(send_type);
             sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage + "\n" + getString(R.string.whatsapp_suffix));
@@ -115,12 +113,10 @@ public class WhatsappFragment extends Fragment {
                 this.startActivity (intent);
             }
 
-            sendLog += "Whatsapp message Successfully sent to " + contactName + " (" + contactPhoneNo + ")\n";
+            sendLog += "SMS Successfully sent to " + contactPhoneNo + ")\n";
         }
         Toast.makeText(this.getContext(), sendLog,Toast.LENGTH_LONG).show();
-        Toast.makeText(this.getContext(), "Finished",Toast.LENGTH_LONG).show();
-
-    }
+    }*/
 
     private boolean isAccessibilityOn (FragmentActivity fragmentActivity, Class<? extends AccessibilityService> clazz) {
         int accessibilityEnabled = 0;

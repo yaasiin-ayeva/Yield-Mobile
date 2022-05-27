@@ -6,4 +6,5 @@
     <string name="whatsapp_text" translatable="false">WhatsApp</string>
     <string name="ERROR_PHONE_NUMBER_FORMAT">Incorrect phone number format</string>
     <string name="whatsapp_suffix" translatable="false">Sent from Yield-App</string>
+    <string name="send_btn_label">Send all pending SMS</string>
 </resources>
